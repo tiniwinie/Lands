@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lands.Views.LoginPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Lands">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout 
+            Padding="10,20,10,5">
+                <Label 
+                Text="Lands"
+                FontAttributes="Bold"
+                FontSize="Large"                 
+                HorizontalOptions="Center">
+                </Label>
+
+                <Image 
+                Source="onu"
+                WidthRequest="200">
+                </Image>
+                <Grid 
+                Margin="0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="E-mail"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Keyboard="Email"
+                    Placeholder="Enter your email..."
+                >
+                    </Entry>
+                    <Label 
+                    Grid.Row="1"
+                    Grid.Column="0"
+
+                    Text="Contraseña"
+                        VerticalOptions="Center"
+                WidthRequest="200"
+                />
+                    <Entry
+                    Grid.Row="1"
+                    Grid.Column="1"
+
+                    IsPassword="True"
+                Placeholder="Enter your password..."
+                />
+                </Grid>
+                <ActivityIndicator></ActivityIndicator>
+                <StackLayout
+                Orientation="Horizontal">
+                    <Label
+                    Text="Rememberme on this device"
+                    VerticalOptions="Center"
+                    HorizontalOptions="StartAndExpand"
+                    >
+                    </Label>
+                    <Switch
+                        HorizontalOptions="End">
+                    </Switch>
+                </StackLayout>
+                <Label
+                    Text="Forot your password?"
+                    HorizontalOptions="Center"
+                    TextColor="Blue">
+                    
+                </Label>
+                
+                <StackLayout
+                Margin="40,0">
+                    <Button
+                Text="Login"
+                TextColor="White"
+                BackgroundColor="Navy"
+                BorderRadius="23"
+                HeightRequest="46"
+                />
+                    <Button
+                Text="Register"
+                TextColor="White"
+                BackgroundColor="Purple"
+                BorderRadius="23"
+                HeightRequest="46"
+                />
+
+                </StackLayout>
+                <StackLayout
+                HorizontalOptions="Center"
+                Orientation="Horizontal">
+                    <Image
+                    Source="face_logo"
+                    WidthRequest="50">
+
+                    </Image>
+                    <Image
+                    Source="twitterLogo"
+                    WidthRequest="50">
+
+                    </Image>
+                    <Image
+                    Source="instagram_logo"
+                    WidthRequest="50">
+                    </Image>
+
+
+
+
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -4,11 +4,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Lands.Views.LoginPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Lands">
+             Title="Login">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView BindingContext="{Binding Login}">
             <StackLayout 
-            Padding="10,20,10,5">
+            Padding="5">
                 <Label 
                 Text="Lands"
                 FontAttributes="Bold"
@@ -21,7 +21,7 @@
                 WidthRequest="200">
                 </Image>
                 <Grid 
-                Margin="0,20">
+                >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
@@ -36,6 +36,7 @@
                     Grid.Row="0"
                     Grid.Column="1"
                     Keyboard="Email"
+                    Text="{Binding Email, Mode=TwoWay}"   
                     Placeholder="Enter your email..."
                 >
                     </Entry>
@@ -50,52 +51,66 @@
                     <Entry
                     Grid.Row="1"
                     Grid.Column="1"
-
+                    Text="{Binding Password, Mode=TwoWay}"
                     IsPassword="True"
                 Placeholder="Enter your password..."
                 />
                 </Grid>
-                <ActivityIndicator></ActivityIndicator>
+                <ActivityIndicator
+                    VerticalOptions="CenterAndExpand"
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                    ></ActivityIndicator>
                 <StackLayout
-                Orientation="Horizontal">
+                     Orientation="Horizontal">
                     <Label
                     Text="Rememberme on this device"
-                    VerticalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
                     HorizontalOptions="StartAndExpand"
                     >
                     </Label>
                     <Switch
-                        HorizontalOptions="End">
+                        HorizontalOptions="End"
+                        IsToggled="{Binding IsRemembered, Mode=TwoWay}">
                     </Switch>
                 </StackLayout>
                 <Label
                     Text="Forot your password?"
                     HorizontalOptions="Center"
-                    TextColor="Blue">
+                    TextColor="Blue"
+                    VerticalOptions="CenterAndExpand">
                     
+
                 </Label>
-                
+
                 <StackLayout
-                Margin="40,0">
+                Margin="40,0"
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
                     <Button
-                Text="Login"
-                TextColor="White"
-                BackgroundColor="Navy"
-                BorderRadius="23"
-                HeightRequest="46"
+                        Text="Login"
+                        TextColor="White"
+                        BackgroundColor="Navy"
+                        BorderRadius="23"
+                        HeightRequest="46"
+                        HorizontalOptions="FillAndExpand"
+                        Command="{Binding LoginCommand}"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                 />
                     <Button
-                Text="Register"
-                TextColor="White"
-                BackgroundColor="Purple"
-                BorderRadius="23"
-                HeightRequest="46"
+                        Text="Register"
+                        TextColor="White"
+                        BackgroundColor="Purple"
+                        BorderRadius="23"
+                        HeightRequest="46"
+                        HorizontalOptions="FillAndExpand"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                 />
 
                 </StackLayout>
                 <StackLayout
                 HorizontalOptions="Center"
-                Orientation="Horizontal">
+                Orientation="Horizontal"
+                    VerticalOptions="EndAndExpand">
                     <Image
                     Source="face_logo"
                     WidthRequest="50">
@@ -118,6 +133,6 @@
 
             </StackLayout>
         </ScrollView>
-        
+
     </ContentPage.Content>
 </ContentPage>
